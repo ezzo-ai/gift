@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sulton ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  margin-top: 15vh;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 8vw;
+}
+
+p {
+  font-size: 5vw;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 20px;
+  border: none;
+  font-size: 4vw;
+  cursor: pointer;
+}
+
+/* yuraklar */
+.heart {
+  position: absolute;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Happy Birthday 💗 </h1>
+
+  <p>
+    просто хаккерлигимми эслатиб койвомман<br><br>
+    ну ты ж знаешь что я тебя люблю.. хехе 🙈✨ <br>
+    чернослешка✨ <br><br>
+    тугилган кунин билан
+  </p>
+
+  <button onclick="showLove()">яна битта гап бор 🙈</button>
+
+  <p id="loveText" style="display:none; margin-top:20px;">
+    ты очень хороший✨😁 
+  </p>
+
+  <p style="margin-top:30px;">Ты меня любишь? 😳</p>
+
+  <button onclick="yesLove()">Да </button>
+  <button id="noBtn" onmouseover="moveNo()" style="position:absolute;">Нет </button>
+</div>
+
+<script>
+function showLove() {
+  document.getElementById("loveText").style.display = "block";
+}
+
+function yesLove() {
+  alert("Я зналааа 😍❤️");
+}
+
+function moveNo() {
+  const btn = document.getElementById("noBtn");
+  btn.style.left = Math.random() * 80 + "vw";
+  btn.style.top = Math.random() * 80 + "vh";
+}
+
+/* yuraklar */
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 10 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
